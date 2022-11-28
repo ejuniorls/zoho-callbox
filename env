@@ -138,3 +138,14 @@
 #--------------------------------------------------------------------
 
 # curlrequest.shareOptions = true
+
+
+ACCOUNTS_ZOHO_URL_US    = "";
+ACCOUNTS_ZOHO_URL_EU    = "";
+
+ZOHO_CLIENT_ID          = "";
+ZOHO_SECRET_US          = "";
+ZOHO_SECRET_EU          = "";
+ZOHO_REDIRECT_URL       = "";
+
+

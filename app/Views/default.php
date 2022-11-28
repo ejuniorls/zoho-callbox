@@ -15,12 +15,15 @@
     <link rel="stylesheet" href="<?= base_url('assets/fontawesome/css/fontawesome.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/fontawesome/css/brands.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/fontawesome/css/solid.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/fontawesome/css/duotone.css') ?>">
 
     <!-- js -->
     <script src="<?= base_url('assets/bootstrap/css/bootstrap.bundle.js') ?>" defer></script>
 </head>
 
 <body>
-    <?= $this->renderSection('content') ?>
+    <div class="container-fluid">
+        <?= $this->renderSection('content') ?>
+    </div>
 </body>
 </html>

@@ -54,12 +54,17 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
 
-$routes->get('zoho/login', 'Zoho\AuthCallboxController::index', ['as' => 'auth.callbox', 'filter' => 'noauth']);
-$routes->get('zoho/logout', 'Zoho\AuthCallboxController::logout', ['as' => 'auth.logout', 'filter' => 'noauth']);
+$routes->get('zoho/generateToken', 'Zoho\ZohoDashboardController::generateToken', ['as' => 'zoho.generateToken', 'filter' => 'noauth']);
 
-$routes->get('zoho/dashboard', 'Zoho\ZohoDashboardController::index', ['as' => 'dashboard.index', 'filter' => 'noauth']);
-$routes->get('zoho/dashboard/users', 'Zoho\ZohoDashboardController::users', ['as' => 'dashboard.users', 'filter' => 'noauth']);
-$routes->get('zoho/dashboard/settings', 'Zoho\ZohoDashboardController::settings', ['as' => 'dashboard.settings', 'filter' => 'noauth']);
+
+$routes->get('zoho/login', 'Zoho\AuthCallboxController::index', ['as' => 'login.callbox', 'filter' => 'noauth']);
+$routes->post('zoho/login', 'Zoho\AuthCallboxController::index', ['as' => 'login.callbox', 'filter' => 'noauth']);
+
+$routes->get('zoho/logout', 'Zoho\AuthCallboxController::logout', ['as' => 'auth.logout', 'filter' => 'auth']);
+
+$routes->get('zoho/dashboard', 'Zoho\ZohoDashboardController::index', ['as' => 'dashboard.index', 'filter' => 'auth']);
+$routes->get('zoho/dashboard/users', 'Zoho\ZohoDashboardController::users', ['as' => 'dashboard.users', 'filter' => 'auth']);
+$routes->get('zoho/dashboard/settings', 'Zoho\ZohoDashboardController::settings', ['as' => 'dashboard.settings', 'filter' => 'auth']);
 
 
 
